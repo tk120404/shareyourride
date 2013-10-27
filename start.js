@@ -26,12 +26,16 @@ app.post('/share', logic.share(ride));
 
 app.post('/search',logic.search(ride));
 
+app.post('/fetchRide',logic.userDetails(ride));
 
 app.get('/circle', function (req, res) {
 
 
     res.end('Hello');
 });
+
+
+app.get('/all',logic.getAll(ride));
 
 
 http.createServer(app).listen(app.get('port'), function(){
